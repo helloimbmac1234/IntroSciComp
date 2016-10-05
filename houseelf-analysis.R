@@ -16,5 +16,5 @@ get_size_class <- function(ear_length){
 }
 #new_data_file
 Size_Class <- print(get_size_class(dna$earlength))
-house_elf_analysis <- data.frame(dna$id, Size_Class, g_c_content)
+house_elf_analysis <- data.frame(dna$id,Size_Class,g_c_content)
 write.csv(house_elf_analysis, file = "house_elf_analysis.csv")
