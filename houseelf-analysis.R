@@ -7,4 +7,14 @@ GC_Content <- function(sequence){
   Cs <- str_count(sequence, "C")
   gc_content <- (Gs + Cs) / str_length(sequence) * 100 
   return(gc_content)}
-GC_Content(dna$dnaseq)
+g_c_content <- GC_Content(dna$dnaseq)
+#Problem 7
+get_size_class <- function(ear_length){
+  # Calculate the size class for one or more earth lengths
+  ear_lengths <- ifelse(ear_length > 10, "large", "small")
+  return(ear_lengths)
+}
+#new_data_file
+Size_Class <- print(get_size_class(dna$earlength))
+house_elf_analysis <- data.frame(dna$id, Size_Class, g_c_content)
+write.csv(house_elf_analysis, file = "house_elf_analysis.csv")
